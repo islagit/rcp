@@ -4014,6 +4014,7 @@ body {
   background-size: cover;
   background-repeat: repeat;
   background-attachment: scroll;
+  border-radius: 25px;
 }
 
 .text-s-white {
