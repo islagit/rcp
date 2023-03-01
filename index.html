@@ -526,14 +526,23 @@
       class="div-question">
       <div class="text-block-15">Остались вопросы? Напишите нам!</div>
       <div class="form-block w-form">
-        <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form"><label for="name"
-            class="form-text">Имя</label><input type="text" class="text-field w-input" maxlength="256" name="name"
-            data-name="Name" placeholder="Имя" id="name" required=""><label for="email" class="form-text">Ваш
-            Email</label><input type="email" class="text-field-2 w-input" maxlength="256" name="email" data-name="Email"
-            placeholder="E-mail" id="email" required=""><label for="email-2" class="form-text">Сообщение</label><input
-            type="text" class="text-field-3 w-input" maxlength="256" name="email-2" data-name="Email 2"
-            placeholder="Ваше сообщение" id="email-2" required=""><input type="submit" value="Отправить"
-            data-wait="Please wait..." class="submit-button w-button"></form>
+        <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form">
+          <!-- name -->
+          <label for="name" class="form-text">Имя</label>
+          <input type="text" class="text-field w-input" maxlength=" 256" name="name" data-name="Name" placeholder="Имя"
+            id="name" required="">
+          <!-- email -->
+          <label for="email" class="form-text">Ваш Email</label>
+          <input type="email" class="text-field-2 w-input" maxlength="256" name="email" data-name="Email"
+            placeholder="E-mail" id="email" required="">
+          <!-- message -->
+          <label for="email-2" class="form-text">Сообщение</label>
+          <input type="text" class="text-field-3 w-input" maxlength="256" name="email-2" data-name="Email 2"
+            placeholder="Ваше сообщение" id="email2" required="">
+          <!-- submit -->
+          <input type="submit" value="Отправить" data-wait="Please wait..." class="submit-button w-button"
+            onclick="SendEmail()">
+        </form>
         <div class="success-message w-form-done">
           <div class="text-block-21">Thank you! Your submission has been received!</div>
         </div>
@@ -597,6 +606,25 @@
     crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("BY6fLJJH-DZjI8c-H");
+    })();
+  </script>
+  <script>
+    function SendEmail() {
+      var params = {
+        from_name: document.getElementById("name").value,
+        email_id: document.getElementById("email").value,
+        message: document.getElementById("email2").value,
+      }
+      emailjs.send("service_j9alfci", "template_bsg6knb", params).then(function (res) {
+        alert("Заявка успешно отправлена!")
+      })
+    }
+  </script>
 </body>
 
 </html>
