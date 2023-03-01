@@ -617,13 +617,13 @@
         email_id: email,
         message: message,
       }
-      if (document.getElementById("name").value != null || document.getElementById("name").value != '' || document.getElementById("name").value.length != 0 &&
-        email != null || email != '' || email.length != 0 &&
-        message != null || message != '' || message.length != 0) {
-        emailjs.send("service_j9alfci", "template_bsg6knb", params).then(function (res) {
+      emailjs.send("service_j9alfci", "template_bsg6knb", params).then(function (res) {
           alert("Заявка успешно отправлена!")
         })
-      }
+//       if (document.getElementById("name").value != null || document.getElementById("name").value != '' || document.getElementById("name").value.length != 0 &&
+//         email != null || email != '' || email.length != 0 &&
+//         message != null || message != '' || message.length != 0) 
+//       }
     }
   </script>
 </body>
