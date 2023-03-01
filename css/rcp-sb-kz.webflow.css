@@ -8129,5 +8129,9 @@ body {
     -ms-grid-column-span: 1;
     grid-column-end: span 1;
   }
+
+    .map-div {
+      height: 50vh;
+    }
 }
 
