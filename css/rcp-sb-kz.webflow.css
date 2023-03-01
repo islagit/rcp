@@ -4578,6 +4578,18 @@ body {
   border-radius: 0.25vw;
 }
 
+.error-message {
+  border-radius: 0.25vw;
+  margin: 0!important;
+  padding: 0!important;
+  display: none!important;
+}
+
+.text-block-22 {
+  text-align: center!important;
+  display: none!important;
+}
+
 .menubg-mob {
   display: none;
 }
