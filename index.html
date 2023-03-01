@@ -538,17 +538,11 @@
           <!-- message -->
           <label for="email-2" class="form-text">Сообщение</label>
           <input type="text" class="text-field-3 w-input" maxlength="256" name="email-2" data-name="Email 2"
-            placeholder="Ваше сообщение" id="email2" required="">
+            placeholder="Ваше сообщение" id="message" required="">
           <!-- submit -->
           <input type="submit" value="Отправить" data-wait="Please wait..." class="submit-button w-button"
             onclick="SendEmail()">
         </form>
-        <div class="success-message w-form-done">
-          <div class="text-block-21">Thank you! Your submission has been received!</div>
-        </div>
-        <div class="error-message w-form-fail">
-          <div class="text-block-22">Oops! Something went wrong while submitting the form.</div>
-        </div>
       </div>
     </div>
   </div>
@@ -618,7 +612,7 @@
       var params = {
         from_name: document.getElementById("name").value,
         email_id: document.getElementById("email").value,
-        message: document.getElementById("email2").value,
+        message: document.getElementById("message").value,
       }
       emailjs.send("service_j9alfci", "template_bsg6knb", params).then(function (res) {
         alert("Заявка успешно отправлена!")
